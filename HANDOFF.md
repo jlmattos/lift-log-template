@@ -9,18 +9,16 @@ Budget: about 30 minutes, all on free tiers.
 
 ## The easy way: let Claude Code drive
 
-Open this repo in Claude Code and type:
+**Already cloned?** Open the folder in Claude Code and type `/setup`.
 
-```
-/setup
-```
+**Not cloned yet, never used a terminal?** Open Claude Code on any folder
+where you want the app to live (your Documents folder is fine) and paste:
 
-or paste this if slash commands are new to you:
-
-> I just created this repo from a template. Read `.claude/skills/setup/SKILL.md`
-> and walk me through first-time setup one step at a time. Check each step
-> with `node scripts/check-setup.mjs`. Never ask me to paste secrets into
-> the chat.
+> I just created a GitHub repo from a template. First ask me for its URL,
+> then clone it into a new folder here, read its `.claude/skills/setup/SKILL.md`
+> and walk me through first-time setup one step at a time, running everything
+> inside that folder. If Node.js or Git are missing, help me install them
+> first. Never ask me to paste secrets into the chat.
 
 Claude will install dependencies, detect your timezone, tell you exactly what
 to click in Supabase and Vercel, verify each step, and finish with your first

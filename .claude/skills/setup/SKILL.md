@@ -22,8 +22,19 @@ Rules for the whole flow:
 - `HANDOFF.md` has the long-form version of every step; read it first.
 
 ## Step 0 — Orientation (you do this)
+0. **Where is the repo?** If the session was opened in a parent folder (e.g.
+   Documents) rather than inside the repo, ask for the GitHub URL of the copy
+   they created, `git clone` it into a subfolder here, and run every later
+   command inside that folder (`cd <folder> && …`). If `git` is missing,
+   install it first (macOS: `xcode-select --install`; Windows: winget
+   `Git.Git`; Linux: the distro package) — tell them an admin password prompt
+   may appear in the terminal, never in chat. Mention that reopening Claude
+   Code inside the new folder later makes `/setup` and the project rules load
+   automatically, but it is not required now.
 1. Read `HANDOFF.md` and `README.md`.
-2. Run `node -v`. Need 20+. If missing, send them to https://nodejs.org (LTS).
+2. Run `node -v`. Need 20+. If missing, install it (macOS with Homebrew:
+   `brew install node`; Windows: `winget install OpenJS.NodeJS.LTS`;
+   otherwise point them at https://nodejs.org LTS and wait).
 3. Run `npm install`.
 4. Run `node scripts/check-setup.mjs` to see the starting state.
 5. Tell them in two sentences what the app is and that setup has 5 steps:
