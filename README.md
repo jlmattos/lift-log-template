@@ -10,8 +10,9 @@ Built with Next.js (App Router, server actions), Supabase (Postgres) and
 Tailwind. Deploys to Vercel. No login: it is meant for exactly one person and
 is protected by an unguessable URL plus server-only database access.
 
-**New here? Read [HANDOFF.md](./HANDOFF.md).** It walks you (or your Claude
-Code session) from an empty clone to a deployed app in about 30 minutes.
+**New here?** Open the repo in Claude Code and type `/setup` — it walks you
+through database, deploy and first run one step at a time. The same steps by
+hand are in [HANDOFF.md](./HANDOFF.md). About 30 minutes either way.
 
 ## Local development
 

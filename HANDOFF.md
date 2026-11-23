@@ -7,6 +7,28 @@ written so you can paste it to Claude Code and say "set this up with me".
 
 Budget: about 30 minutes, all on free tiers.
 
+## The easy way: let Claude Code drive
+
+Open this repo in Claude Code and type:
+
+```
+/setup
+```
+
+or paste this if slash commands are new to you:
+
+> I just created this repo from a template. Read `.claude/skills/setup/SKILL.md`
+> and walk me through first-time setup one step at a time. Check each step
+> with `node scripts/check-setup.mjs`. Never ask me to paste secrets into
+> the chat.
+
+Claude will install dependencies, detect your timezone, tell you exactly what
+to click in Supabase and Vercel, verify each step, and finish with your first
+logged set. The sections below are the same steps for doing it by hand.
+
+At any point, `node scripts/check-setup.mjs` prints what is done and what is
+next.
+
 ---
 
 ## 0. What you are setting up
