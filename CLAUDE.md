@@ -16,7 +16,11 @@ Setup and conventions are in `HANDOFF.md`; keep the two in sync.
   Supabase SQL editor. Never `drizzle-kit push`. Make code tolerate a lagging
   migration where practical (see the PGRST200 fallbacks in `actions/workouts.ts`).
 - Before pushing to `main`: `npm run lint` and `npx tsc --noEmit` clean, and
-  confirm no workout is open today (`workouts.completed_at is null`).
+  confirm no workout is open today. "Open" means today's workout only; a null
+  `completed_at` on a past date is history, not an open workout. In the SQL
+  editor (which runs in UTC, so use your home timezone):
+  `select id from workouts where performed_on = (now() at time zone 'America/New_York')::date and completed_at is null;`
+  must return zero rows.
 
 ## Style
 - Optimistic UI for anything the user does mid-set; roll back with a message.

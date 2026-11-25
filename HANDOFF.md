@@ -203,8 +203,12 @@ Paste this section into your `CLAUDE.md` if you edit it; it is already there.
   — Supabase caps a single select at 1000 and silently truncates.
 - **Optimistic UI for logging**: paint the set, then sync; roll back on error.
   See `set-logger.tsx` and the `pendingSets` logic in `today-view.tsx`.
-- **Never deploy while a workout is open** (`workouts.completed_at is null`
-  for today): a deploy mid-session breaks the open logging page.
+- **Never deploy while a workout is open**: a deploy mid-session breaks the
+  open logging page. "Open" means today's workout only; a null `completed_at`
+  on a past date is history, not an open workout. Check in the SQL editor (it
+  runs in UTC, so use your home timezone):
+  `select id from workouts where performed_on = (now() at time zone 'America/New_York')::date and completed_at is null;`
+  must return zero rows.
 - `main` auto-deploys. Lint and `tsc --noEmit` must be clean first.
 
 ---
